@@ -1,0 +1,5 @@
+#Please pip install -r requirements.txt or pip3 install -r requirements.txt
+
+#Requirements without Version Specifiers
+openai
+# Requirements with Version Specifiers
