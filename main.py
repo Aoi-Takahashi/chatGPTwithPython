@@ -37,12 +37,14 @@ def show_answer(response):
 
 
 def main():
-    question = accept_question()
-    if openai.api_key == "YOUR_API_KEY":
+
+    try:
+        question = accept_question()
+        answer = send_question(question)
+        show_answer(answer)
+    except openai.error.AuthenticationError:
         print("chatGPTのAPIキーがありません\nAPIキーを取得してください\nシステムを終了します")
         sys.exit()
-    answer = send_question(question)
-    show_answer(answer)
 
 
 if __name__ == "__main__":
